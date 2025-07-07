@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>沃德发小学 - 培养未来的叛逆精英</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Arial", "微软雅黑", sans-serif;
+				background: linear-gradient(135deg, #9b59b6, #8e44ad, #663399);
+				color: #fff;
+				overflow-x: hidden;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			header {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				font-size: 28px;
+				font-weight: bold;
+				color: #fff;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			}
+
+			.nav-links {
+				display: flex;
+				list-style: none;
+				/* gap: 30px; */
+			}
+
+			.nav-links li {
+				white-space: nowrap;
+			}
+
+			.nav-links a {
+				padding: 20px 20px;
+				display: inline-block;
+				color: #fff;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				border-radius: 25px;
+			}
+
+			.nav-links li:hover {
+				background: rgba(255, 255, 255, 0.2);
+			}
+
+			.hero {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				background: linear-gradient(135deg, #e74c3c, #9b59b6, #3498db);
+			}
+
+			.hero h1 {
+				font-size: 4rem;
+				margin-bottom: 20px;
+				text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+				animation: bounce 2s ease-in-out infinite;
+			}
+
+			@keyframes bounce {
+				0%,
+				20%,
+				50%,
+				80%,
+				100% {
+					transform: translateY(0);
+				}
+				40% {
+					transform: translateY(-30px);
+				}
+				60% {
+					transform: translateY(-15px);
+				}
+			}
+
+			.hero p {
+				font-size: 1.5rem;
+				margin-bottom: 30px;
+				opacity: 0.9;
+			}
+
+			.cta-button {
+				background: linear-gradient(45deg, #ff6b6b, #feca57);
+				color: #fff;
+				padding: 15px 40px;
+				border: none;
+				border-radius: 50px;
+				font-size: 1.2rem;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				display: inline-block;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+			}
+
+			.cta-button:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+			}
+
+			.section {
+				padding: 100px 0;
+			}
+
+			.section h2 {
+				font-size: 3rem;
+				text-align: center;
+				margin-bottom: 50px;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			}
+
+			.cards {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 30px;
+				margin-top: 50px;
+			}
+
+			.card {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				padding: 30px;
+				border-radius: 20px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				transition: all 0.3s ease;
+				text-align: center;
+			}
+
+			.card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+			}
+
+			.card h3 {
+				font-size: 1.8rem;
+				margin-bottom: 20px;
+				color: #feca57;
+			}
+
+			.about {
+				background: rgba(255, 255, 255, 0.05);
+			}
+
+			.about p {
+				font-size: 1.2rem;
+				line-height: 1.8;
+				margin-bottom: 20px;
+				text-align: justify;
+			}
+
+			.faculty {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 30px;
+				margin-top: 50px;
+			}
+
+			.faculty-card {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				padding: 20px;
+				border-radius: 15px;
+				text-align: center;
+				transition: all 0.3s ease;
+			}
+
+			.faculty-card:hover {
+				transform: scale(1.05);
+			}
+
+			.faculty-avatar {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				background: linear-gradient(45deg, #ff6b6b, #feca57);
+				margin: 0 auto 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+			}
+
+			.testimonials {
+				background: rgba(0, 0, 0, 0.2);
+			}
+
+			.testimonial {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 30px;
+				border-radius: 15px;
+				margin-bottom: 30px;
+				border-left: 5px solid #feca57;
+			}
+
+			.stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 30px;
+				margin-top: 50px;
+			}
+
+			.stat-card {
+				text-align: center;
+				padding: 30px;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 15px;
+				transition: all 0.3s ease;
+			}
+
+			.stat-card:hover {
+				transform: scale(1.05);
+			}
+
+			.stat-number {
+				font-size: 3rem;
+				font-weight: bold;
+				color: #feca57;
+				margin-bottom: 10px;
+			}
+
+			footer {
+				background: rgba(0, 0, 0, 0.3);
+				padding: 50px 0;
+				text-align: center;
+			}
+
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 30px;
+				margin-bottom: 30px;
+			}
+
+			.footer-section h3 {
+				color: #feca57;
+				margin-bottom: 20px;
+			}
+
+			.footer-section p,
+			.footer-section a {
+				color: #ccc;
+				text-decoration: none;
+				line-height: 1.6;
+			}
+
+			.footer-section a:hover {
+				color: #fff;
+			}
+
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2.5rem;
+				}
+
+				.hero p {
+					font-size: 1.2rem;
+				}
+
+				.section h2 {
+					font-size: 2rem;
+				}
+
+				nav {
+					display: flex;
+					flex-direction: column;
+					padding: 0 !important;
+				}
+				header {
+					padding: 0;
+				}
+
+				nav .logo {
+					font-size: 25px;
+					margin-top: 10px;
+				}
+				nav .nav-links {
+					display: flex;
+					width: 100%;
+					margin-top: 0;
+					padding: 0px 0;
+					gap: 0;
+				}
+				nav .nav-links li {
+					width: 100%;
+					text-align: center;
+				}
+				nav .nav-links a {
+					padding: 10px 6px;
+					display: inline-block;
+				}
+			}
+
+			.dark495 {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				border: 5px dashed red;
+				background: yellow;
+				border-radius: 20px;
+				padding: 10px;
+				color: black;
+				margin-top: 30px;
+			}
+			.dark495 a {
+				color: #fe5757;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav class="container">
+				<div class="logo">沃德发小学 WTF Elementary</div>
+				<ul class="nav-links">
+					<li><a href="#home">首页</a></li>
+					<li><a href="#about">关于我们</a></li>
+					<li><a href="#programs">课程</a></li>
+					<li><a href="#faculty">师资</a></li>
+					<li><a href="#testimonials">学生评价</a></li>
+					<li><a href="#contact">联系我们</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="home" class="hero">
+			<div class="container">
+				<h1>沃德发小学</h1>
+				<p>培养未来的叛逆精英 • 教育界的颠覆者</p>
+				<a href="#about" class="cta-button">探索我们的独特教育</a>
+			</div>
+		</section>
+
+		<section id="about" class="section about">
+			<div class="container">
+				<h2>关于沃德发小学</h2>
+				<p>
+					欢迎来到沃德发小学，一所致力于培养独立思考、敢于质疑、勇于挑战权威的革命性教育机构。我们的校名"沃德发"虽然听起来文雅，但实际上代表着对传统教育的深度反思和彻底颠覆。
+				</p>
+
+				<p>
+					在这里，我们不教学生如何做一个"好孩子"，而是教他们如何成为真正的自己。我们鼓励学生质疑一切，包括老师的权威、家长的期望，甚至社会的规范。因为只有在质疑中，才能找到真正的答案。
+				</p>
+
+				<p>
+					我们的教育理念建立在一个简单而深刻的认识之上：传统教育就像一个巨大的工厂，试图把所有的孩子都塑造成标准化的产品。而我们要做的，就是拆掉这个工厂，让每个孩子都能绽放出属于自己的光芒。
+				</p>
+
+				<p>
+					在沃德发小学，我们相信"坏孩子"往往比"好孩子"更有创造力，更有独立思考的能力。我们的课程设计围绕着如何培养孩子的批判性思维、创新能力和反叛精神展开。
+				</p>
+			</div>
+		</section>
+
+		<section id="programs" class="section">
+			<div class="container">
+				<h2>我们的特色课程</h2>
+				<div class="cards">
+					<div class="card">
+						<h3>权威质疑学</h3>
+						<p>
+							教授学生如何有理有据地挑战各种权威，包括老师、家长、政府官员。课程内容包括逻辑推理、批判性思维、辩论技巧等。学生将学会用事实和逻辑来质疑一切看似理所当然的事情。
+						</p>
+					</div>
+					<div class="card">
+						<h3>创造性破坏学</h3>
+						<p>
+							启发学生的创新思维，教授如何通过"破坏"旧有的思维模式来创造新的可能性。从拆解玩具到重新设计校园规则，学生将学会在破坏中寻找创新的机会。
+						</p>
+					</div>
+					<div class="card">
+						<h3>叛逆心理学</h3>
+						<p>
+							深入探讨叛逆心理的积极作用，教授学生如何将叛逆精神转化为推动社会进步的动力。课程涵盖历史上的伟大叛逆者，如伽利略、达尔文等科学家的故事。
+						</p>
+					</div>
+					<div class="card">
+						<h3>规则重构学</h3>
+						<p>
+							教授学生如何分析现有规则的合理性，并提出改进建议。从家庭规则到学校制度，学生将学会用批判性思维来审视和改善各种社会规范。
+						</p>
+					</div>
+					<div class="card">
+						<h3>独立思考训练</h3>
+						<p>通过各种思维游戏和实践活动，培养学生的独立思考能力。学生将学会如何摆脱从众心理，形成自己独特的观点和见解。</p>
+					</div>
+					<div class="card">
+						<h3>反传统艺术</h3>
+						<p>鼓励学生用艺术的形式表达对传统的质疑和反思。从涂鸦到行为艺术，学生将学会用创意的方式来表达自己的想法和观点。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="faculty" class="section">
+			<div class="container">
+				<h2>我们的叛逆师资团队</h2>
+				<div class="faculty">
+					<div class="faculty-card">
+						<div class="faculty-avatar">🤔</div>
+						<h3>反叛教授 张三</h3>
+						<p>前传统学校校长，因为太过"叛逆"被辞退。现在专门教授学生如何质疑权威。口头禅："为什么要听话？"</p>
+					</div>
+					<div class="faculty-card">
+						<div class="faculty-avatar">😈</div>
+						<h3>捣蛋博士 李四</h3>
+						<p>心理学博士，专门研究儿童叛逆心理的积极作用。认为"好孩子"是教育的失败产品。</p>
+					</div>
+					<div class="faculty-card">
+						<div class="faculty-avatar">🎭</div>
+						<h3>创意大师 王五</h3>
+						<p>艺术家，专门教授反传统艺术。作品曾被多个保守机构抗议，因此备受学生喜爱。</p>
+					</div>
+					<div class="faculty-card">
+						<div class="faculty-avatar">🚀</div>
+						<h3>破坏专家 赵六</h3>
+						<p>工程师出身，专门教授"创造性破坏"。相信只有先破坏，才能创造出更好的东西。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="testimonials" class="section testimonials">
+			<div class="container">
+				<h2>学生和家长的真实评价</h2>
+				<div class="testimonial">
+					<p>
+						"自从我儿子来到沃德发小学，他变得更加自信了。现在他不再盲从老师的话，而是会用自己的思维去判断是非。虽然有时候会给我们带来一些'麻烦'，但我们看到了他真正的成长。"
+					</p>
+					<p><strong>- 学生家长 陈女士</strong></p>
+				</div>
+				<div class="testimonial">
+					<p>
+						"在这里，我学会了思考'为什么'。为什么要写作业？为什么要听话？为什么要按照别人的期望生活？现在我知道，真正的学习是为了自己，而不是为了取悦别人。"
+					</p>
+					<p><strong>- 五年级学生 小明</strong></p>
+				</div>
+				<div class="testimonial">
+					<p>
+						"沃德发小学让我的女儿找到了自己的声音。她不再是那个只会说'是'的乖孩子，而是一个有主见、有想法的独立个体。这就是教育应该有的样子。"
+					</p>
+					<p><strong>- 学生家长 刘先生</strong></p>
+				</div>
+				<div class="testimonial">
+					<p>
+						"我们的老师从来不说'你不能这样做'，而是会问'你为什么要这样做？'这种教育方式让我学会了为自己的行为负责，也学会了理性地思考问题。"
+					</p>
+					<p><strong>- 六年级学生 小红</strong></p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2>我们的"辉煌"成就</h2>
+				<div class="stats">
+					<div class="stat-card">
+						<div class="stat-number">99%</div>
+						<p>的学生学会了质疑权威</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">87%</div>
+						<p>的家长表示"头疼但满意"</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">156</div>
+						<p>项传统规则被学生成功改革</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">42</div>
+						<p>次被传统教育机构"批评"</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2>我们的教育宣言</h2>
+				<p style="font-size: 1.3rem; line-height: 1.8; text-align: center; margin-bottom: 30px">
+					我们拒绝培养只会说"是"的机器人，我们要培养敢说"不"的思想家。<br />
+					我们不要标准答案，我们要独特见解。<br />
+					我们不要乖孩子，我们要有想法的孩子。<br />
+					我们不要盲从，我们要理性质疑。<br />
+					我们不要循规蹈矩，我们要创新突破。
+				</p>
+				<p style="text-align: center; font-style: italic; font-size: 1.1rem">因为世界需要的不是更多的复制品，而是更多的原创者。</p>
+			</div>
+		</section>
+
+		<footer id="contact">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>联系我们</h3>
+						<p>地址：叛逆大道666号</p>
+						<p>电话：888-448-4488</p>
+						<p>邮箱：abuse@wtf.edu.kg</p>
+					</div>
+					<div class="footer-section">
+						<h3>学校理念</h3>
+						<p>质疑一切，创造未来</p>
+						<p>不做乖孩子，做自己</p>
+						<p>叛逆是成长的开始</p>
+					</div>
+					<div class="footer-section">
+						<h3>关注我们</h3>
+						<p><a href="#">脸输: @沃德发小学</a></p>
+						<p><a href="#">微性：@沃德发张小龙</a></p>
+						<p><a href="#">抖阴：叛逆教育</a></p>
+					</div>
+				</div>
+				<p style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2)">
+					© 2077 沃德发小学 - 让每个孩子都成为独一无二的自己
+				</p>
+				<div class="dark495">
+					<span>⚠️ 以上内容纯属虚构，仅供娱乐，如有雷同，实属巧合 ⚠️</span>
+					<span>
+						此域名持有者：<a href="https://dark495.me/" target="_blank"><b>dark495</b></a>
+					</span>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// 添加一些互动效果
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					e.preventDefault();
+					document.querySelector(this.getAttribute("href")).scrollIntoView({
+						behavior: "smooth",
+					});
+				});
+			});
+
+			// 动态标题效果
+			const titles = [
+				"沃德发小学 - 培养叛逆精英",
+				"沃德发小学 - 质疑权威专家",
+				"沃德发小学 - 创造性破坏者",
+				"沃德发小学 - 反传统教育",
+			];
+
+			let titleIndex = 0;
+			setInterval(() => {
+				document.title = titles[titleIndex];
+				titleIndex = (titleIndex + 1) % titles.length;
+			}, 3000);
+		</script>
+	</body>
+</html>

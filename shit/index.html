@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>狗屎大学 - 卓越教育的新标杆</title>
+		<title>黑屁高级理工中学 - 培养新时代网络人才</title>
 		<style>
 			* {
 				margin: 0;
@@ -12,218 +12,313 @@
 			}
 
 			body {
-				font-family: "Microsoft YaHei", sans-serif;
+				font-family: "Microsoft YaHei", Arial, sans-serif;
+				background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ff8c00 100%);
+				min-height: 100vh;
 				line-height: 1.6;
-				color: #333;
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 			}
 
 			.container {
 				max-width: 1200px;
 				margin: 0 auto;
-				padding: 20px;
+				padding: 0 20px;
 			}
 
 			header {
-				background: rgb(112, 47, 9);
+				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(10px);
-				border-radius: 20px;
-				padding: 30px;
-				text-align: center;
-				margin-bottom: 30px;
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+				border-bottom: 3px solid #ff6b00;
+			}
+
+			.header-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 15px 0;
 			}
 
 			.logo {
-				font-size: 4rem;
+				display: flex;
+				align-items: center;
+				gap: 15px;
+			}
+
+			.logo-icon {
+				width: 50px;
+				height: 50px;
+				background: #ff6b00;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 24px;
+				color: white;
 				font-weight: bold;
-				color: #fff;
-				text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-				margin-bottom: 10px;
-				animation: glow 2s ease-in-out infinite alternate;
 			}
 
-			@keyframes glow {
-				from {
-					text-shadow:
-						3px 3px 6px rgba(0, 0, 0, 0.3),
-						0 0 20px rgba(255, 255, 255, 0.5);
-				}
-				to {
-					text-shadow:
-						3px 3px 6px rgba(0, 0, 0, 0.3),
-						0 0 30px rgba(255, 255, 255, 0.8);
-				}
+			.logo-text {
+				font-size: 24px;
+				font-weight: bold;
+				color: #ff6b00;
 			}
 
-			.subtitle {
-				font-size: 1.5rem;
-				color: #fff;
-				opacity: 0.9;
+			.domain {
+				font-size: 14px;
+				color: #666;
+				background: #ffe4b5;
+				padding: 5px 10px;
+				border-radius: 20px;
+				border: 2px solid #ff6b00;
+			}
+
+			.hero {
+				margin-top: 100px;
+				text-align: center;
+				padding: 80px 0;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(5px);
+				border-radius: 20px;
+				margin-bottom: 40px;
+			}
+
+			.hero h1 {
+				font-size: 48px;
+				color: #8b4513;
+				margin-bottom: 20px;
+				text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+			}
+
+			.hero p {
+				font-size: 24px;
+				color: #d2691e;
+				margin-bottom: 30px;
+				font-weight: bold;
+			}
+
+			.cta-button {
+				background: linear-gradient(45deg, #ff6b00, #ff8c00);
+				color: white;
+				padding: 15px 40px;
+				border: none;
+				border-radius: 30px;
+				font-size: 18px;
+				font-weight: bold;
+				cursor: pointer;
+				transform: scale(1);
+				transition: all 0.3s ease;
+				box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+			}
+
+			.cta-button:hover {
+				transform: scale(1.1);
+				box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
 			}
 
 			.section {
-				background: rgba(255, 255, 255, 0.95);
+				background: rgba(255, 255, 255, 0.9);
+				margin: 40px 0;
+				padding: 60px 40px;
 				border-radius: 20px;
-				padding: 40px;
-				margin-bottom: 30px;
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-				backdrop-filter: blur(5px);
+				border: 3px solid #ffd700;
 			}
 
-			h2 {
-				color: #4a5568;
-				font-size: 2.5rem;
-				margin-bottom: 20px;
+			.section h2 {
+				font-size: 36px;
+				color: #ff6b00;
+				margin-bottom: 30px;
 				text-align: center;
 				position: relative;
 			}
 
-			h2::after {
+			.section h2::after {
 				content: "";
-				display: block;
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
 				width: 100px;
 				height: 4px;
-				background: linear-gradient(45deg, #667eea, #764ba2);
-				margin: 10px auto;
+				background: #ffd700;
 				border-radius: 2px;
 			}
 
-			h3 {
-				color: #2d3748;
-				font-size: 1.8rem;
+			.section h3 {
+				font-size: 24px;
+				color: #d2691e;
 				margin: 30px 0 15px 0;
-				border-left: 5px solid #667eea;
-				padding-left: 20px;
 			}
 
-			p {
-				font-size: 1.1rem;
-				margin-bottom: 15px;
+			.section p {
+				font-size: 16px;
+				color: #8b4513;
+				margin-bottom: 20px;
 				text-align: justify;
-				line-height: 1.8;
 			}
 
-			.highlight {
-				background: linear-gradient(45deg, #ff6b6b, #feca57);
-				color: white;
-				padding: 20px;
+			.features {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 30px;
+				margin: 40px 0;
+			}
+
+			.feature-card {
+				background: rgba(255, 215, 0, 0.2);
+				padding: 30px;
 				border-radius: 15px;
+				border: 2px solid #ffd700;
+				text-align: center;
+				transition: transform 0.3s ease;
+			}
+
+			.feature-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+			}
+
+			.feature-icon {
+				font-size: 48px;
+				margin-bottom: 20px;
+			}
+
+			.testimonials {
+				background: rgba(255, 140, 0, 0.1);
+				padding: 40px;
+				border-radius: 15px;
+				margin: 40px 0;
+			}
+
+			.testimonial {
+				background: white;
+				padding: 30px;
+				border-radius: 10px;
 				margin: 20px 0;
-				box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+				border-left: 5px solid #ff6b00;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 			}
 
 			.stats {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				gap: 20px;
-				margin: 30px 0;
+				margin: 40px 0;
 			}
 
-			.stat-card {
-				background: linear-gradient(135deg, #667eea, #764ba2);
-				color: white;
+			.stat-item {
+				text-align: center;
+				background: rgba(255, 255, 255, 0.8);
 				padding: 30px;
 				border-radius: 15px;
-				text-align: center;
-				transform: translateY(0);
-				transition: transform 0.3s ease;
-			}
-
-			.stat-card:hover {
-				transform: translateY(-10px);
+				border: 2px solid #ffd700;
 			}
 
 			.stat-number {
-				font-size: 3rem;
+				font-size: 48px;
 				font-weight: bold;
-				margin-bottom: 10px;
+				color: #ff6b00;
+				display: block;
 			}
 
-			.programs {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 25px;
-				margin: 30px 0;
-			}
-
-			.program-card {
-				background: linear-gradient(135deg, #f093fb, #f5576c);
-				color: white;
-				padding: 25px;
-				border-radius: 15px;
-				box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
-			}
-
-			.program-card h4 {
-				font-size: 1.5rem;
-				margin-bottom: 15px;
-			}
-
-			.testimonial {
-				background: linear-gradient(135deg, #4facfe, #00f2fe);
-				color: white;
-				padding: 30px;
-				border-radius: 15px;
-				margin: 20px 0;
-				font-style: italic;
-				position: relative;
-			}
-
-			.testimonial::before {
-				content: '"';
-				font-size: 4rem;
-				position: absolute;
-				left: 20px;
-				top: -10px;
-				opacity: 0.5;
+			.stat-label {
+				font-size: 16px;
+				color: #8b4513;
+				margin-top: 10px;
 			}
 
 			footer {
-				background: rgba(0, 0, 0, 0.8);
+				background: rgba(139, 69, 19, 0.9);
 				color: white;
+				padding: 60px 0 30px 0;
+				margin-top: 60px;
+			}
+
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 40px;
+				margin-bottom: 40px;
+			}
+
+			.footer-section h3 {
+				color: #ffd700;
+				margin-bottom: 20px;
+				font-size: 20px;
+			}
+
+			.footer-section p,
+			.footer-section a {
+				color: #fff8dc;
+				text-decoration: none;
+				margin-bottom: 10px;
+				display: block;
+			}
+
+			.footer-section a:hover {
+				color: #ffd700;
+			}
+
+			.footer-bottom {
 				text-align: center;
-				padding: 30px;
-				border-radius: 20px;
-				margin-top: 30px;
+				padding-top: 30px;
+				border-top: 1px solid #ffd700;
+				color: #fff8dc;
 			}
 
-			.floating-emoji {
-				position: fixed;
-				font-size: 2rem;
-				animation: float 6s ease-in-out infinite;
-				z-index: 1000;
+			.highlight {
+				background: #ffd700;
+				padding: 2px 6px;
+				border-radius: 4px;
+				color: #8b4513;
+				font-weight: bold;
 			}
 
-			@keyframes float {
-				0%,
-				100% {
-					transform: translateY(0px);
+			.warning {
+				background: #ff4500;
+				color: white;
+				padding: 20px;
+				border-radius: 10px;
+				margin: 20px 0;
+				text-align: center;
+				font-weight: bold;
+				animation: pulse 2s infinite;
+			}
+
+			@keyframes pulse {
+				0% {
+					opacity: 1;
 				}
 				50% {
-					transform: translateY(-20px);
+					opacity: 0.7;
+				}
+				100% {
+					opacity: 1;
 				}
 			}
 
-			.emoji1 {
-				top: 20%;
-				left: 10%;
-				animation-delay: 0s;
+			.joke-section {
+				background: rgb(255 255 255 / 71%);
+				border: 3px dashed #ff6b00;
+				padding: 40px;
+				margin: 40px 0;
+				border-radius: 15px;
 			}
-			.emoji2 {
-				top: 30%;
-				right: 10%;
-				animation-delay: 2s;
-			}
-			.emoji3 {
-				top: 60%;
-				left: 5%;
-				animation-delay: 4s;
-			}
-			.emoji4 {
-				top: 80%;
-				right: 15%;
-				animation-delay: 1s;
+
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 32px;
+				}
+				.hero p {
+					font-size: 18px;
+				}
+				.section {
+					padding: 40px 20px;
+				}
 			}
 			.dark495 {
 				text-align: center;
@@ -243,275 +338,335 @@
 		</style>
 	</head>
 	<body>
-		<div class="floating-emoji emoji1">💩</div>
-		<div class="floating-emoji emoji2">🎓</div>
-		<div class="floating-emoji emoji3">📚</div>
-		<div class="floating-emoji emoji4">🏆</div>
+		<header>
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<div class="logo-icon">黑</div>
+						<div class="logo-text">黑屁高级理工中学</div>
+					</div>
+					<div class="domain">🌐 www.shit.edu.kg</div>
+				</div>
+			</div>
+		</header>
 
 		<div class="container">
-			<header>
-				<div class="logo">狗屎大学</div>
-				<div class="subtitle">Dogshit University - 引领未来，创造奇迹</div>
-			</header>
+			<section class="hero">
+				<h1>🎓 黑屁高级理工中学 🎓</h1>
+				<p>培养新时代网络辩论精英 | 专业键盘侠摇篮</p>
+				<button class="cta-button" onclick="alert('恭喜！您已经具备了入学的基本素质！')">立即报名成为键盘侠</button>
+			</section>
 
-			<div class="section">
-				<h2>校长致辞</h2>
+			<section class="section">
+				<h2>🏫 学校简介</h2>
 				<p>
-					亲爱的同学们，家长们，以及社会各界的朋友们，欢迎来到狗屎大学！作为这所享誉全球的顶尖学府的校长，我深感荣幸能够在这里与大家分享我们的办学理念和辉煌成就。
+					黑屁高级理工中学成立于2024年，是一所专门培养<span class="highlight">网络辩论人才</span
+					>的现代化教育机构。我校秉承"以键盘为剑，以网络为场"的办学理念，致力于培养具有<span class="highlight"
+						>超强键盘操作能力</span
+					>和<span class="highlight">网络辩论技巧</span>的复合型人才。
 				</p>
+
 				<p>
-					狗屎大学成立于1869年，至今已有超过150年的悠久历史。我们秉承着"臭味相投，共同进步"的校训，致力于培养具有国际视野、创新精神和领导才能的优秀人才。在过去的一个半世纪里，我们的毕业生遍布全球各个角落，在各行各业都取得了令人瞩目的成就。
+					学校坐落在虚拟网络空间的黄金地段，拥有<span class="highlight">999+个专业网络教室</span>，配备了最先进的<span
+						class="highlight"
+						>机械键盘实验室</span
+					>和<span class="highlight">网络辩论仿真系统</span>。我们的教学楼采用了<span class="highlight">防网络暴力设计</span
+					>，每个教室都配备了<span class="highlight">情绪稳定器</span>和<span class="highlight">理智恢复装置</span>。
 				</p>
-				<div class="highlight">
-					<p>我们的使命是：让每一位学生都能在这里找到属于自己的那一坨金子，无论它看起来多么像狗屎！</p>
+
+				<p>
+					建校以来，我校已为社会输送了<span class="highlight">10万+优秀键盘侠</span
+					>，他们活跃在各大论坛、社交媒体平台，为维护网络正义、传播正能量做出了杰出贡献。我校毕业生就业率达到<span
+						class="highlight"
+						>200%</span
+					>（部分学生同时在多个平台工作），深受各大互联网公司和自媒体机构的青睐。
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>🎯 专业设置</h2>
+				<div class="features">
+					<div class="feature-card">
+						<div class="feature-icon">⌨️</div>
+						<h3>键盘侠工程学</h3>
+						<p>
+							专业培养具有超高打字速度和精准表达能力的键盘操作专家。主要课程包括：《高级键盘操作学》、《网络辩论心理学》、《表情包设计与应用》等。
+						</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🔍</div>
+						<h3>网络信息挖掘学</h3>
+						<p>
+							培养具有敏锐洞察力和信息收集能力的专业人才。核心课程：《搜索引擎高级应用》、《社交媒体分析学》、《网络痕迹追踪技术》等。
+						</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">💬</div>
+						<h3>网络辩论艺术学</h3>
+						<p>专注于培养网络辩论技巧和沟通艺术。主要学习：《网络辩论修辞学》、《逻辑思维训练》、《网络礼仪与道德》等课程。</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🎨</div>
+						<h3>表情包设计与传播学</h3>
+						<p>
+							培养具有创意思维和视觉表达能力的表情包设计师。课程设置：《表情包美学》、《网络流行文化研究》、《病毒式传播学》等。
+						</p>
+					</div>
 				</div>
-				<p>
-					在狗屎大学，我们相信教育不仅仅是知识的传授，更是人格的塑造和品格的培养。我们的教授都是各自领域的顶尖专家，他们不仅学术造诣深厚，更是人生的导师。我们采用最先进的教学方法，包括沉浸式学习、项目驱动学习、以及我们独创的"臭味体验式教学法"。
-				</p>
-			</div>
+			</section>
 
-			<div class="section">
-				<h2>学校简介</h2>
-				<p>
-					狗屎大学坐落在风景如画的臭水湖畔，占地面积达到惊人的666公顷。我们的校园环境优美，设施完善，拥有全球最先进的教学楼、实验室、图书馆和体育设施。我们的标志性建筑——黄金塔，高达88层，是全世界最高的教学楼，象征着我们追求卓越的决心。
-				</p>
+			<div class="warning">⚠️ 重要提醒：本网站纯属恶搞娱乐，请勿当真！网络辩论需理性，键盘侠需谨慎！ ⚠️</div>
 
+			<section class="section">
+				<h2>📊 学校数据</h2>
 				<div class="stats">
-					<div class="stat-card">
-						<div class="stat-number">99,999</div>
-						<div>在校学生</div>
+					<div class="stat-item">
+						<span class="stat-number">9999+</span>
+						<div class="stat-label">在校键盘侠</div>
 					</div>
-					<div class="stat-card">
-						<div class="stat-number">8,888</div>
-						<div>优秀教师</div>
+					<div class="stat-item">
+						<span class="stat-number">666</span>
+						<div class="stat-label">专业教师</div>
 					</div>
-					<div class="stat-card">
-						<div class="stat-number">666</div>
-						<div>专业课程</div>
+					<div class="stat-item">
+						<span class="stat-number">888</span>
+						<div class="stat-label">字/分钟平均打字速度</div>
 					</div>
-					<div class="stat-card">
-						<div class="stat-number">100%</div>
-						<div>就业率</div>
+					<div class="stat-item">
+						<span class="stat-number">100%</span>
+						<div class="stat-label">网络辩论胜率</div>
 					</div>
 				</div>
+			</section>
 
-				<h3>办学特色</h3>
+			<section class="section">
+				<h2>🏆 教学特色</h2>
+				<h3>🎮 沉浸式网络辩论体验</h3>
 				<p>
-					我们的办学特色可以用"四个世界第一"来概括：第一个拥有味觉实验室的大学，第一个开设"气味学"专业的大学，第一个将"嗅觉训练"纳入必修课的大学，第一个拥有专业"屎学研究院"的大学。这些创新的教学理念和方法，让我们在国际教育界独树一帜。
+					我校独创的<span class="highlight">沉浸式网络辩论教学法</span
+					>，让学生在真实的网络环境中学习和成长。通过模拟各种网络场景，学生能够快速掌握不同平台的辩论技巧和沟通方式。我们的教学系统支持<span
+						class="highlight"
+						>实时情绪监测</span
+					>，确保学生在激烈的网络辩论中保持理智和冷静。
+				</p>
+
+				<h3>🔧 先进的教学设备</h3>
+				<p>
+					学校配备了<span class="highlight">超级计算机集群</span>用于网络数据分析，<span class="highlight">全息投影辩论室</span
+					>用于模拟真实网络环境，以及<span class="highlight">AI辩论陪练系统</span>帮助学生提高辩论技巧。我们还有专门的<span
+						class="highlight"
+						>表情包制作工作室</span
+					>，配备了最新的图像处理软件和创意设计工具。
+				</p>
+
+				<h3>🎯 个性化培养方案</h3>
+				<p>
+					根据每位学生的<span class="highlight">键盘操作特点</span>和<span class="highlight">网络辩论风格</span
+					>，制定个性化的培养方案。我们有专业的<span class="highlight">网络人格分析师</span
+					>，能够精准识别学生的网络行为模式，并提供针对性的指导。学校还设有<span class="highlight">网络心理健康中心</span
+					>，确保学生在网络世界中保持健康的心理状态。
+				</p>
+
+				<h3>🌐 国际化教学视野</h3>
+				<p>
+					我校与<span class="highlight">全球知名网络平台</span>建立了合作关系，学生有机会参与<span class="highlight"
+						>国际网络辩论比赛</span
+					>。我们还邀请了<span class="highlight">世界顶级键盘侠</span
+					>担任客座教授，分享他们的实战经验和独门秘籍。学校定期举办<span class="highlight">网络文化节</span
+					>，让学生接触不同国家的网络文化和辩论传统。
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>👨‍🏫 师资力量</h2>
+				<p>我校拥有一支<span class="highlight">实力雄厚的师资队伍</span>，包括：</p>
+
+				<h3>🥇 金牌教师团队</h3>
+				<p>
+					<strong>张键盘教授</strong> - 网络辩论学科带头人，曾在各大论坛连续辩论<span class="highlight">72小时不败</span
+					>，创下了网络辩论的传奇记录。他的代表作《键盘侠修炼手册》被誉为行业圣经。
 				</p>
 
 				<p>
-					我们还拥有全球最大的地下图书馆，藏书超过1000万册，其中包括许多珍贵的古籍和手稿。我们的数字化程度也是全球领先的，每个教室都配备了最先进的多媒体设备和人工智能助教系统。
+					<strong>李打字副教授</strong> - 键盘操作技术专家，打字速度高达<span class="highlight">1000字/分钟</span
+					>，曾获得世界键盘操作大赛冠军。他开发的"闪电打字法"帮助无数学生提高了键盘操作效率。
 				</p>
-			</div>
 
-			<div class="section">
-				<h2>专业设置</h2>
 				<p>
-					狗屎大学下设18个学院，涵盖了从传统学科到前沿交叉学科的各个领域。我们的专业设置紧跟时代发展，既有历史悠久的经典专业，也有应对未来挑战的新兴专业。
+					<strong>王表情包博士</strong> - 表情包设计与传播学专家，设计的表情包累计使用量超过<span class="highlight">10亿次</span
+					>。他的理论"表情包传播动力学"为网络文化研究奠定了重要基础。
 				</p>
 
-				<div class="programs">
-					<div class="program-card">
-						<h4>应用狗屎学院</h4>
+				<h3>🌟 特聘专家</h3>
+				<p>
+					学校还特聘了多位<span class="highlight">网络名人</span>和<span class="highlight">资深键盘侠</span
+					>担任兼职教师，他们将实战经验与理论知识相结合，为学生提供最前沿的网络辩论指导。
+				</p>
+			</section>
+
+			<section class="section joke-section">
+				<h2>🎭 学生生活</h2>
+				<p>在黑屁高级理工中学，学生们的生活丰富多彩：</p>
+
+				<h3>🏠 宿舍生活</h3>
+				<p>
+					学生宿舍配备了<span class="highlight">专业游戏椅</span>和<span class="highlight">护眼显示器</span
+					>，确保学生在最舒适的环境中进行学习。每个宿舍都有<span class="highlight">24小时高速网络</span
+					>，保证学生随时可以参与网络辩论实践。宿舍还设有<span class="highlight">情绪发泄室</span
+					>，学生可以在此释放网络辩论中的压力。
+				</p>
+
+				<h3>🍽️ 餐厅服务</h3>
+				<p>
+					学校餐厅提供<span class="highlight">"键盘侠营养餐"</span>，富含维生素A和叶黄素，有效保护学生视力。还有特色的<span
+						class="highlight"
+						>"熬夜套餐"</span
+					>和<span class="highlight">"辩论加油餐"</span>，为学生提供充足的营养支持。
+				</p>
+
+				<h3>🎪 课外活动</h3>
+				<p>
+					学校定期举办<span class="highlight">"网络辩论大赛"</span>、<span class="highlight">"键盘操作技能比赛"</span>、<span
+						class="highlight"
+						>"表情包设计大赛"</span
+					>等活动。还有<span class="highlight">"网络礼仪周"</span>和<span class="highlight">"理性辩论月"</span
+					>等主题活动，培养学生的网络素养。
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>💼 就业前景</h2>
+				<p>我校毕业生就业前景广阔，主要就业方向包括：</p>
+
+				<h3>🏢 互联网公司</h3>
+				<p>
+					各大互联网公司的<span class="highlight">社区管理</span>、<span class="highlight">内容审核</span>、<span
+						class="highlight"
+						>用户运营</span
+					>等岗位。我校毕业生凭借出色的网络沟通能力和丰富的网络文化知识，深受企业欢迎。
+				</p>
+
+				<h3>📱 自媒体行业</h3>
+				<p>
+					成为<span class="highlight">专业自媒体人</span>、<span class="highlight">网络意见领袖</span>、<span class="highlight"
+						>内容创作者</span
+					>等。我校独特的教学体系帮助学生掌握了网络传播规律和用户心理，为他们在自媒体领域取得成功奠定了基础。
+				</p>
+
+				<h3>🎮 游戏行业</h3>
+				<p>
+					游戏公司的<span class="highlight">社区运营</span>、<span class="highlight">玩家服务</span>、<span class="highlight"
+						>游戏文化推广</span
+					>等职位。我校学生对网络文化的深度理解和优秀的沟通技巧，使他们在游戏行业中备受青睐。
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>🎓 招生信息</h2>
+				<h3>📋 招生条件</h3>
+				<p>
+					1. 年满16周岁，具有基本的<span class="highlight">网络操作能力</span><br />
+					2. 打字速度不低于<span class="highlight">60字/分钟</span><br />
+					3. 具有良好的<span class="highlight">网络素养</span>和<span class="highlight">沟通能力</span><br />
+					4. 通过我校<span class="highlight">网络辩论入学考试</span><br />
+					5. 身体健康，能够承受<span class="highlight">长时间网络辩论</span>的强度
+				</p>
+
+				<h3>💰 学费标准</h3>
+				<p>
+					本科专业：<span class="highlight">每年9999元</span>（含网络流量费）<br />
+					研究生专业：<span class="highlight">每年19999元</span>（含专业键盘一把）<br />
+					博士专业：<span class="highlight">每年29999元</span>（含定制游戏椅一把）
+				</p>
+
+				<h3>🏆 奖学金政策</h3>
+				<p>
+					学校设有多项奖学金：<br />
+					- <span class="highlight">键盘侠奖学金</span>：奖励辩论技巧出色的学生<br />
+					- <span class="highlight">打字速度奖学金</span>：奖励键盘操作技能突出的学生<br />
+					- <span class="highlight">网络礼仪奖学金</span>：奖励具有良好网络素养的学生<br />
+					- <span class="highlight">创意表情包奖学金</span>：奖励表情包设计才华横溢的学生
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>🎤 学生感言</h2>
+				<div class="testimonials">
+					<div class="testimonial">
 						<p>
-							这是我们最著名的学院，设有狗屎工程、狗屎管理、狗屎艺术等多个专业。毕业生在各大企业都非常抢手，因为他们具有独特的"化腐朽为神奇"的能力。
+							"在黑屁高级理工中学的三年学习经历，让我从一个网络小白成长为了专业的键盘侠。学校的教学方法非常实用，老师们都是真正的网络辩论高手。现在我已经是某知名论坛的版主了！"
 						</p>
+						<p><strong>- 2023届键盘侠工程学专业 小明</strong></p>
 					</div>
-					<div class="program-card">
-						<h4>气味科学学院</h4>
+					<div class="testimonial">
 						<p>
-							全球唯一的气味科学研究机构，拥有世界上最先进的气味分析设备。我们的研究成果被广泛应用于香水、食品、环保等行业。
+							"学校的表情包设计课程真的太棒了！我设计的表情包现在在各大社交平台都很火。王表情包博士的指导让我受益匪浅，现在我已经成立了自己的表情包设计工作室。"
 						</p>
+						<p><strong>- 2022届表情包设计与传播学专业 小红</strong></p>
 					</div>
-					<div class="program-card">
-						<h4>废料循环利用学院</h4>
-						<p>致力于将废弃物转化为有用资源的研究，我们的技术已经帮助全球减少了90%的垃圾填埋量。</p>
-					</div>
-					<div class="program-card">
-						<h4>屎学哲学学院</h4>
-						<p>探讨人生的本质和意义，我们的哲学教授都是世界级的思想家，他们的理论深刻地影响了现代哲学发展。</p>
-					</div>
-					<div class="program-card">
-						<h4>臭味传播学院</h4>
-						<p>研究信息传播的新模式，我们创新的"气味传播理论"已经被全球各大媒体公司采用。</p>
-					</div>
-					<div class="program-card">
-						<h4>黄金提取学院</h4>
-						<p>专门研究如何从看似无用的东西中提取价值，我们的毕业生在投资银行和咨询公司都有着出色的表现。</p>
+					<div class="testimonial">
+						<p>
+							"网络信息挖掘学专业的课程让我掌握了强大的信息收集和分析能力。现在我在一家大型互联网公司担任数据分析师，工作得心应手。感谢母校的培养！"
+						</p>
+						<p><strong>- 2021届网络信息挖掘学专业 小李</strong></p>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<div class="section">
-				<h2>师资力量</h2>
-				<p>
-					狗屎大学拥有一支世界一流的师资队伍。我们的教授中有88位诺贝尔奖获得者，666位各国科学院院士，以及无数的国际知名专家学者。他们不仅在学术研究上成就卓著，更是充满激情的教育家。
-				</p>
+			<section class="section">
+				<h2>📞 联系我们</h2>
+				<p>如果您对我校感兴趣，欢迎通过以下方式联系我们：</p>
+				<p><strong>学校地址：</strong>网络空间第一区域键盘侠大道999号</p>
+				<p><strong>招生热线：</strong>888-666-4488</p>
+				<p><strong>官方网站：</strong>shit.edu.kg</p>
+				<p><strong>官方邮箱：</strong>abuse@shit.edu.kg</p>
+				<p><strong>官方微性：</strong>黑屁高级理工中学官方账号</p>
+			</section>
+		</div>
 
-				<h3>明星教授</h3>
-				<p>
-					我们的明星教授包括：屎学泰斗张三教授，他发明了"屎学三定律"，彻底改变了人们对废物的认知；气味女王李四教授，她能够仅凭嗅觉就识别出10000种不同的气味；还有我们的哲学大师王五教授，他的著作《屎学与人生》已经被翻译成68种语言，在全球销量超过1000万册。
-				</p>
-
-				<p>
-					我们的教授不仅学术水平高，而且非常关心学生的成长。他们经常与学生进行深入的学术交流，指导学生进行科研项目，帮助学生规划职业发展。师生关系融洽，学术氛围浓厚，这是狗屎大学独特的文化特色。
-				</p>
-			</div>
-
-			<div class="section">
-				<h2>校园生活</h2>
-				<p>
-					在狗屎大学，学生生活丰富多彩。我们拥有超过500个学生社团，涵盖学术、体育、艺术、公益等各个领域。我们的学生宿舍按照五星级酒店标准建造，每个房间都配备了独立卫生间、空调、WiFi等设施。
-				</p>
-
-				<h3>特色活动</h3>
-				<p>
-					我们每年都会举办盛大的"屎学节"，这是全球最大的学术嘉年华活动，吸引来自世界各地的学者和学生参加。我们还有"气味大赛"、"废料艺术展"、"哲学辩论赛"等各种有趣的活动。
-				</p>
-
-				<p>
-					我们的体育设施也是世界一流的，包括奥运标准的游泳池、现代化的健身中心、专业的足球场和篮球场等。我们的校队在各种体育比赛中都取得了优异的成绩，特别是我们的"屎丸子"队，连续10年获得全国大学生体育联赛冠军。
-				</p>
-
-				<div class="testimonial">
-					<p>
-						在狗屎大学的四年是我人生中最宝贵的时光。这里的老师和同学都很棒，学术氛围浓厚，生活环境优美。我在这里不仅学到了知识，更重要的是学会了如何做人做事。狗屎大学真的改变了我的人生！
-					</p>
-					<p>—— 2023届毕业生 小明</p>
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>🏫 学校信息</h3>
+						<p>黑屁高级理工中学</p>
+						<p>成立于2024年</p>
+						<p>培养网络人才的摇篮</p>
+						<p>域名：www.shit.edu.kg</p>
+					</div>
+					<div class="footer-section">
+						<h3>📚 学科专业</h3>
+						<p>键盘侠工程学</p>
+						<p>网络信息挖掘学</p>
+						<p>网络辩论艺术学</p>
+						<p>表情包设计与传播学</p>
+					</div>
+					<div class="footer-section">
+						<h3>🎓 教育服务</h3>
+						<p>本科教育</p>
+						<p>研究生教育</p>
+						<p>继续教育</p>
+						<p>网络培训</p>
+					</div>
+					<div class="footer-section">
+						<h3>📞 联系方式</h3>
+						<p>招生热线：888-666-4488</p>
+						<p>邮箱：abuse@shit.edu.kg</p>
+						<p>地址：网络空间第一区域键盘侠大道999号</p>
+					</div>
 				</div>
-			</div>
-
-			<div class="section">
-				<h2>国际合作</h2>
-				<p>
-					狗屎大学与全球200多所知名大学建立了合作关系，包括哈佛大学、牛津大学、剑桥大学、斯坦福大学等。我们每年都有大量的交换生项目，让学生有机会到世界各地学习和体验不同的文化。
-				</p>
-
-				<p>
-					我们还与联合国、世界银行、国际奥委会等国际组织保持着密切的合作关系。我们的研究成果被广泛应用于解决全球性问题，如环境保护、可持续发展、公共卫生等。
-				</p>
-
-				<h3>海外分校</h3>
-				<p>
-					为了更好地服务全球学生，我们在世界各地设立了15个海外分校，包括纽约分校、伦敦分校、东京分校、悉尼分校等。这些分校都按照总校的标准建设，提供同样高质量的教育服务。
-				</p>
-			</div>
-
-			<div class="section">
-				<h2>毕业生成就</h2>
-				<p>
-					狗屎大学的毕业生遍布全球，在各个行业都有着杰出的表现。他们中有国家领导人、企业家、科学家、艺术家、体育明星等。我们为他们的成就感到骄傲，他们也为母校争光。
-				</p>
-
-				<h3>著名校友</h3>
-				<p>
-					我们的著名校友包括：现任联合国秘书长赵六，全球最大科技公司CEO钱七，诺贝尔物理学奖得主孙八，奥运冠军周九等。他们的成功证明了狗屎大学教育的价值。
-				</p>
-
-				<div class="testimonial">
-					<p>
-						狗屎大学给了我坚实的学术基础和宽广的国际视野。在这里学到的不仅是知识，更是做人的道理和面对挑战的勇气。我的成功离不开母校的培养！
-					</p>
-					<p>—— 著名企业家 钱七</p>
-				</div>
-
-				<p>
-					我们的毕业生就业率连续20年保持100%，平均起薪在全球所有大学中排名第一。更重要的是，我们的毕业生在职业发展中表现出色，晋升速度快，领导能力强，深受用人单位好评。
-				</p>
-			</div>
-
-			<div class="section">
-				<h2>科研成果</h2>
-				<p>
-					狗屎大学在科研方面取得了令人瞩目的成就。我们每年发表的学术论文数量在全球高校中排名前三，我们的科研成果被引用次数更是遥遥领先。
-				</p>
-
-				<h3>重大突破</h3>
-				<p>
-					近年来，我们的科研团队在多个领域取得了重大突破：成功研发出了"万能转换器"，可以将任何废料转化为黄金；发明了"气味互联网"，让人们可以通过网络传递气味信息；创造了"屎学人工智能"，能够自动识别和分析各种复杂问题。
-				</p>
-
-				<p>
-					这些成果不仅在学术界引起了轰动，也在产业界得到了广泛应用。我们已经与多家世界500强企业签署了技术转让协议，预计未来10年的技术转让收入将超过100亿美元。
-				</p>
-			</div>
-
-			<div class="section">
-				<h2>未来展望</h2>
-				<p>
-					面向未来，狗屎大学将继续秉承"臭味相投，共同进步"的校训，不断创新教育理念和方法，为培养更多优秀人才而努力。我们计划在未来5年内：
-				</p>
-
-				<p>
-					建设全球最大的"屎学研究中心"，投资50亿美元，汇集世界顶尖的科学家和研究设备；启动"千万学生计划"，通过在线教育平台为全球1000万学生提供优质教育服务；建立"太空分校"，成为第一所在太空设立分校的大学。
-				</p>
-
-				<p>
-					我们相信，通过我们的努力，狗屎大学将成为21世纪最有影响力的教育机构，为人类的进步和发展做出更大的贡献。我们诚挚地邀请全世界的优秀学子加入我们的大家庭，与我们一起创造更加美好的未来！
-				</p>
-
-				<div class="highlight">
-					<p>记住：在狗屎大学，没有真正的废物，只有放错地方的黄金！</p>
-				</div>
-			</div>
-
-			<div class="section">
-				<h2>招生信息</h2>
-				<p>
-					狗屎大学热忱欢迎全球优秀学子报考。我们的招生政策公平、公正、公开，不分种族、性别、宗教信仰，只要你有追求卓越的决心和勇气，就有机会成为我们的一员。
-				</p>
-
-				<h3>申请条件</h3>
-				<p>
-					本科申请者需要具备：高中毕业证书，学习成绩优良，具有良好的品德和强烈的学习动机，能够适应我们独特的教学环境（特别是对各种气味的耐受性）。
-				</p>
-
-				<p>研究生申请者需要具备：本科学位，相关专业背景，研究能力和创新精神，以及对"屎学"等相关领域的浓厚兴趣。</p>
-
-				<h3>奖学金</h3>
-				<p>
-					我们为优秀学生提供丰厚的奖学金，包括全额学费减免、生活费补贴、海外交流机会等。我们的"黄金奖学金"每年资助100名最优秀的学生，金额高达每人10万美元。
-				</p>
-			</div>
-
-			<footer>
-				<p>&copy; 2077 狗屎大学 版权所有</p>
-				<p>地址：臭水湖畔黄金大道666号 | 邮编：114514 | 电话：+888-448-884-8484</p>
-				<p>邮箱：abuse@wtf.edu.kg | 网址：wtf.edu.kg</p>
-				<p>让我们一起把废物变成黄金！</p>
 				<div class="dark495">
 					<span>⚠️ 以上内容纯属虚构，仅供娱乐，如有雷同，实属巧合 ⚠️</span>
 					<span>
 						此域名持有者：<a href="https://dark495.me/" target="_blank"><b>dark495</b></a>
 					</span>
+					<span>
+						<a href="https://wtf.edu.kg/" target="_blank">沃德发小学</a> |
+						<a href="https://shit.edu.kg/" target="_blank">黑屁高级理工中学</a> |
+						<a href="https://fuck.edu.kg/" target="_blank">草泥马大学</a>
+					</span>
 				</div>
-			</footer>
-		</div>
-
-		<script>
-			// 添加一些动态效果
-			document.addEventListener("DOMContentLoaded", function () {
-				// 随机生成更多浮动表情
-				const emojis = ["💩", "🎓", "📚", "🏆", "⭐", "🌟", "💎", "🎯"];
-
-				function createFloatingEmoji() {
-					const emoji = document.createElement("div");
-					emoji.className = "floating-emoji";
-					emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-					emoji.style.left = Math.random() * 100 + "%";
-					emoji.style.top = Math.random() * 100 + "%";
-					emoji.style.animationDelay = Math.random() * 6 + "s";
-					document.body.appendChild(emoji);
-
-					setTimeout(() => {
-						emoji.remove();
-					}, 10000);
-				}
-
-				// 每5秒添加一个新的浮动表情
-				setInterval(createFloatingEmoji, 5000);
-			});
-		</script>
+			</div>
+		</footer>
 	</body>
 </html>

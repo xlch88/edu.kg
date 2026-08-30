@@ -1,0 +1,26 @@
+{
+  "name": "edu-kg",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-30",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "wtf.edu.kg",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "shit.edu.kg",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "fuck.edu.kg",
+      "custom_domain": true,
+    },
+  ],
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+  },
+}
